@@ -12,7 +12,8 @@ jobs:
       - run: sudo apt install build-essential
       - run: make -j$(nproc)
       - run: make install
+      - run: tar -czf gcc.tar.gz output/
       - uses: actions/upload-artifact@v2
         with:
           name: gcc
-          path: output/
+          path: gcc.tar.gz
